@@ -4,7 +4,40 @@
 <title>HTML JavaScript harness 1</title>
 
 <script>
-// JavaScript goes here.
+let buttonPresses = 0
+
+function button1Clicked() {
+  let entry = document.getElementById("text_1").value
+  let money = parseFloat(entry)
+  alert(`${money} dollars is equal to ${dollarsToEuro(money)} Euro.`)
+}
+
+function dollarsToEuro(dollars) {
+  return dollars * 0.85
+}
+
+function button2Clicked() {
+  document.getElementById("headline").style.color = "cadetblue"
+}
+
+function button3Clicked() {
+  buttonPresses += 1
+  alert(`You've pressed Button 3 ${buttonPresses} times.`)
+
+  if (buttonPresses == 3) {
+    alert("Hey, hat trick!")
+  }
+}
+
+function button4Clicked() {
+  document.getElementById("paragraph_1").innerHTML = `
+  <strong>This</strong> <em>is</em> some HTML.
+  <table>
+    <tr><td>Table cell</td></tr>
+  </table>
+  <img src="https://www.tripsavvy.com/thmb/IEvwr9xtNdvwOefyUHEFb4RIkjk=/2309x1299/filters:fill(auto,1)/GettyImages-697224578-5b0ebad38e1b6e003e9b3036.jpg" />
+  `
+}
 </script>
 
 </head>
@@ -16,13 +49,13 @@
 <h2 id="subheading">Subheading</h2>
 
 <p>
-  <button id="button_1">Button 1</button>
+  <button id="button_1" onclick="button1Clicked()">Button 1</button>
   &nbsp;&nbsp;&nbsp;
-  <button id="button_2">Button 2</button>
+  <button id="button_2" onclick="button2Clicked()">Button 2</button>
   &nbsp;&nbsp;&nbsp;
-  <button id="button_3">Button 3</button>
+  <button id="button_3" onclick="button3Clicked()">Button 3</button>
   &nbsp;&nbsp;&nbsp;
-  <button id="button_4">Button 4</button>
+  <button id="button_4" onclick="button4Clicked()">Button 4</button>
 </p>
 
 <p>
